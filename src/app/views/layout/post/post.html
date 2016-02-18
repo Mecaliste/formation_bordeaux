@@ -1,0 +1,16 @@
+<article>
+    <h1> {{vm.post.title}}</h1>
+    <p ng-bind="vm.post.body"></p>
+</article>
+<section>
+    <h2>
+        Comments
+    </h2>
+    <md-list>
+        <md-list-item class="md-3-line md-list-item-text" ng-repeat="comment in vm.post.comments track by comment.id">
+            <h3 ng-bind="comment.name"></h3>
+            <h4 ng-bind="comment.email"></h4>
+            <p ng-bind="comment.body"></p>
+        </md-list-item>
+    </md-list>
+</section>

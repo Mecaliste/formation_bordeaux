@@ -1,0 +1,33 @@
+<h1>Post creation</h1>
+<form novalidate name="vm.postForm" ng-submit="vm.submit(vm.post)">
+    <md-input-container flex>
+        <label>Title</label>
+        <input name="title" ng-model="vm.post.title" type="text" required md-maxlength="20"/>
+        <ng-messages for="vm.postForm.title.$error" ng-show="vm.postForm.title.$touched || vm.postForm.title.$submitted">
+            <ng-message when="required">
+                Title is required
+            </ng-message>
+            <ng-message when="md-maxlength">
+                Title is too long (20)
+            </ng-message>
+        </ng-messages>
+    </md-input-container>
+    <md-input-container>
+        <label>Body</label>
+        <textarea name="body" ng-model="vm.post.body" required md-maxlength="200" minlength="20"></textarea>
+        <ng-messages for="vm.postForm.body.$error" ng-show="vm.postForm.body.$touched || vm.postForm.body   .$submitted">
+            <ng-message when="required">
+                Body is required
+            </ng-message>
+            <ng-message when="md-maxlength">
+                Body is too long (200)
+            </ng-message>
+            <ng-message when="minLength">
+                Body is too short (20)
+            </ng-message>
+        </ng-messages>
+    </md-input-container>
+    <md-button type="submit">
+        Submit
+    </md-button>
+</form>
