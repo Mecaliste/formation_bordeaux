@@ -14,19 +14,25 @@
     function FormController($log, postModel) {
         $log.debug('Form controller');
         var vm = this;
+        vm.postModel = postModel;
+        vm.log = $log;
+    }
+
+    FormController.prototype.submit = function () {
+        var vm = this;
         vm.submit = function (post) {
             if (vm.postForm.$valid) {
-                postModel
+                vm.postModel
                     .create(post)
                     .then(function (createdPost) {
-                        $log.debug(createdPost);
+                        vm.log.debug(createdPost);
                     })
                     .catch(function (err) {
 
-                        $log.debug(err);
+                        vm.log.debug(err);
                     })
             }
+            $log.debug('Form controller ending');
         }
-        $log.debug('Form controller ending');
     }
 })();
