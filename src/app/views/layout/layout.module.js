@@ -6,7 +6,8 @@
             'af.home',
             'af.post',
             'af.form',
-            'af.toolbar'
+            'af.toolbar',
+            'af.menu'
     ])
         .config(layoutRouting);
 
@@ -15,7 +16,7 @@
      * @param $stateProvider
      * @ngInject
      */
-    function layoutRouting($stateProvider) {
+    function layoutRouting($stateProvider, afMenuProvider) {
         $stateProvider.state('layout', {
             url: '',
             abstract: true,
@@ -23,7 +24,16 @@
             resolve: {
                 restricted: restricted
             }
-        })
+        });
+        afMenuProvider
+            .addMenuItem({
+                name:'home',
+                state:'home'
+            })
+            .addMenuItem({
+                name:'form',
+                state:'form'
+            });
     }
 
     /**
