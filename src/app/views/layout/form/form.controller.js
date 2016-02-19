@@ -32,7 +32,7 @@
                         vm.log.debug(err);
                     })
             }
-            $log.debug('Form controller ending');
+            vm.log.debug('Form controller ending');
         }
     }
 })();

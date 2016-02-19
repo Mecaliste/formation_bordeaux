@@ -1,0 +1,12 @@
+<h1>Login</h1>
+<form>
+    <md-input-container>
+        <label>Email</label>
+        <input name="email" ng-model="vm.user.email" type="email"/>
+    </md-input-container>
+    <md-input-container>
+        <label>Password</label>
+        <input name="password" ng-model="vm.user.password" type="password"/>
+    </md-input-container>
+    <md-button ng-click="vm.login(vm.user)" class="md-raised">Login</md-button>
+</form>

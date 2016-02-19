@@ -6,11 +6,10 @@
         .config(config);
 
     /** @ngInject */
-    function config($logProvider, $urlRouterProvider) {
+    function config($logProvider, $urlRouterProvider, $locationProvider) {
+        //$urlRouterProvider.otherwise('/home');
         // Enable log
         $logProvider.debugEnabled(true);
-        $urlRouterProvider.when('','/home');
-        //$urlRouterProvider.otherwise('/home');
+        $locationProvider.html5Mode(true);
     }
-
 })();

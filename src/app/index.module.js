@@ -9,7 +9,9 @@
             'ngAria',
             'ui.router',
             'ngMaterial',
+            'satellizer',
             'af.layout',
-            'af.model'
+            'af.model',
+            'af.auth'
         ]);
 })();

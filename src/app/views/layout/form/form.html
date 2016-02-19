@@ -1,6 +1,6 @@
 <h1>Post creation</h1>
 <form novalidate name="vm.postForm" ng-submit="vm.submit(vm.post)">
-    <md-input-container flex>
+    <md-input-container>
         <label>Title</label>
         <input name="title" ng-model="vm.post.title" type="text" required md-maxlength="20"/>
         <ng-messages for="vm.postForm.title.$error" ng-show="vm.postForm.title.$touched || vm.postForm.title.$submitted">
